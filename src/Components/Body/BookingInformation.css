@@ -1,0 +1,76 @@
+.room_filter{
+    width: 100%;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    /* margin-left: 40px; */
+    margin-top: 15px;
+    position: fixed;
+    top: 3.4vh;
+    background-color: #F4F5F7;
+    z-index: 10;
+    /* border: 1px solid red; */
+}
+:root{
+    --display: flex;
+    --width: 180px;
+    --height: 40px;
+    --align-items: center;
+    --margin-right: 20px;
+    --border: 1px solid #ccc;
+}
+.booking_date_zone,
+.booking_time_zone,
+.booking_duration_zone,
+.booking_seat_zone,
+.booking_address_zone {
+    display: var(--display);
+    width: var(--width);
+    height: var(--height);
+    align-items: var(--align-items);
+    margin-right: var(--margin-right);
+    border: var(--border);
+}
+label {
+    color: #444;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+input,
+select {
+    width: 80%;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.booking_date_zone{
+    margin-left: 40px;
+}
+.date_picker{
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+.date_picker input { 
+    border: none;
+    outline: none;
+    margin-left: 15px;
+}
+.date_picker .custom_calendar {
+    transform: translateX(38px);
+}
+.calendar_icon{
+    margin-right: 15px;
+}
+.booking_time_zone {
+    position: relative;
+    font-size: 15px;
+    width: 150px;
+}
+.find_by_room_name{
+    display: flex;
+}

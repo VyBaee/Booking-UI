@@ -1,0 +1,79 @@
+.Header {
+    width: 100vw;
+    height: 5vh;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0052CC;
+}
+.container_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    width: auto;
+    margin-left: 15px;
+}
+.navigation{
+    display: flex;
+}
+/* .navigation:hover{
+} */
+img {
+    height: 4vh;
+    color: white;
+}
+.nav{
+    width: 5vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+}
+.container_right {
+    width: auto;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between, center;
+}
+.get_help{
+    font-size: 35px;
+    margin-top: 5px;
+}
+.user_login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+}
+.user_logo{
+    border-radius: 500px;
+    background-color: #126BE0;
+    width: 30px;
+    height: 30px;
+}
+.user_logo img{
+    width: 30px;
+    height: 25px;
+}
+.user_account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+.account{
+    margin: 0 15px 0 15px
+}

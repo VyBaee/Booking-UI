@@ -1,0 +1,241 @@
+body {
+  background-color: #f4f5f7;
+  z-index: 20;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container-but-bigger {
+  width: 100vw;
+  height: 100vh;
+}
+
+.booking-address {
+  width: 100%;
+  height: 15vh;
+  position: fixed;
+  top: 11.9vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.address-container {
+  width: 90vw;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-list {
+  display: flex;
+  width: 100%;
+}
+
+.address-items {
+  width: 88vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.item img {
+  height: 125px;
+  margin-left: 20px;
+}
+
+.item-right {
+  width: 100%;
+  height: inherit;
+  margin-left: 20px;
+}
+
+.item-right-up {
+  margin-top: 20px;
+}
+
+.item-right-down {
+  margin-top: 10px;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  gap: 10px;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+  overflow-y: auto;
+  margin-top: 28vh;
+  margin-left: 53px;
+}
+
+.time-labels {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-gap: 0;
+}
+
+.time-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.hidden {
+  visibility: hidden; /* Ẩn các mốc thời gian phụ nhưng vẫn giữ vị trí */
+}
+
+.main-time {
+  visibility: visible; /* Hiển thị các mốc thời gian chính */
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+  border-left: 1px solid #ccc;
+  width: 100%;
+}
+
+.table-items {
+  display: flex;
+}
+
+.time-item {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  border-right: 1px solid #ccc;
+}
+
+.cell {
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #ccc;
+}
+
+.cell.selected {
+  background-color: rgba(0, 0, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.cell.selected.merged {
+  background-color: rgba(0, 128, 0, 0.2); /* Màu nền đặc biệt cho các ô đã gộp */
+  border: 2px solid rgba(0, 128, 0, 0.5); /* Viền nổi bật */
+}
+
+.cell.selected.single {
+  border: 2px solid blue;
+  border-radius: 4px;
+  margin: -1.5px;
+  z-index: 1;
+}
+
+.cell.selected.first {
+  border-top: 2px solid blue;
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: -1.5px;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.cell.selected.middle {
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  margin: -1.5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.cell.selected.last {
+  border-bottom: 2px solid blue;
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin: -1.5px;
+  margin-top: 0;
+  z-index: 1;
+}
+
+.cell.dragging {
+  background-color: rgba(255, 165, 0, 0.2); /* Màu cam nhạt khi kéo chọn */
+  border: 2px dashed orange;
+}
+
+.cell.dragging.merged {
+  background-color: rgba(0, 128, 0, 0.2); /* Màu xanh nếu đã được gộp */
+  border: 2px dashed green;
+}
+
+.cell:nth-child(4n) {
+  border-bottom: 1px solid black;
+}
+
+.merged-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(76, 175, 80, 0.6);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  grid-column: span 1; /* Căn chỉnh ô theo lưới */
+}
+
+
+.merged-cell span {
+  display: inline-block;
+  padding: 5px;
+  background-color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+}
+
+.cell:hover {
+  background-color: rgba(0, 0, 255, 0.05);
+}
+
+.cell.selected:hover {
+  background-color: rgba(0, 0, 255, 0.15);
+}
+
+.cell.merged:hover {
+  background-color: rgba(0, 128, 0, 0.15);
+}
+
+.cell.merged:first-of-type {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.cell.merged:last-of-type {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
